@@ -60,7 +60,7 @@ func parsePackage(directory string, filenames []string) (*Generator, error) {
 		if err != nil {
 			return nil, fmt.Errorf("syntax error: %s", err)
 		}
-		if err := generator.processImports(file, importer); err != nil {
+		if err := generator.processImports(file, importer, directory); err != nil {
 			return nil, err
 		}
 		if err := generator.processInterfaces(file); err != nil {
@@ -84,13 +84,13 @@ func parsePackage(directory string, filenames []string) (*Generator, error) {
 	return generator, nil
 }
 
-func (g *Generator) processImports(file *ast.File, importer types.Importer) error {
+func (g *Generator) processImports(file *ast.File, importer types.ImporterFrom, from string) error {
 	for _, spec := range file.Imports {
 		path, err := strconv.Unquote(spec.Path.Value)
 		if err != nil {
 			return err
 		}
-		pkg, err := importer.Import(path)
+		pkg, err := importer.ImportFrom(path, from, 0)
 		if err != nil {
 			return err
 		}
