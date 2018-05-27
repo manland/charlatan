@@ -1,4 +1,4 @@
-package main // import "github.com/percolate/charlatan"
+package main // import "github.com/manland/charlatan"
 
 import (
 	"flag"

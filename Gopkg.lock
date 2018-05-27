@@ -17,23 +17,27 @@
   branch = "master"
   name = "github.com/sergi/go-diff"
   packages = ["diffmatchpatch"]
-  revision = "feef008d51ad2b3778f85d387ccf91735543008d"
+  revision = "da645544ed44df016359bd4c0e3dc60ee3a0da43"
 
 [[projects]]
   name = "github.com/stretchr/testify"
   packages = ["assert"]
-  revision = "69483b4bd14f5845b5a1e55bca19e954e827f1d0"
-  version = "v1.1.4"
+  revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
+  version = "v1.2.1"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/tools"
-  packages = ["go/ast/astutil","imports"]
-  revision = "6d70fb2e85323e81c89374331d3d2b93304faa36"
+  packages = [
+    "go/ast/astutil",
+    "imports",
+    "internal/fastwalk"
+  ]
+  revision = "a5b4c53f6e8bdcafa95a94671bf2d1203365858b"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "04831e2590a3991d1b99fcd21a9046a57933844304a9b8090a7fce891d6bbee5"
+  inputs-digest = "59da3ea9b1ddd289c9ae1a9cd5a2ae2658e762da8477539c751201d0fda2081d"
   solver-name = "gps-cdcl"
   solver-version = 1

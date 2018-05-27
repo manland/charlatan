@@ -2,6 +2,8 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+// +build !plan9
+
 package main
 
 import (
@@ -20,7 +22,7 @@ import (
 
 const (
 	currentVersionURL = "https://golang.org/VERSION?m=text"
-	downloadURLPrefix = "https://storage.googleapis.com/golang"
+	downloadURLPrefix = "https://dl.google.com/go"
 )
 
 // downloadGoVersion downloads and upacks the specific go version to dest/go.
